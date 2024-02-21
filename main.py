@@ -1,4 +1,3 @@
-from googletrans import Translator, constants
 import math
 import os
 
@@ -16,5 +15,6 @@ def title_text():
 
 def center(text, width, border = " "):
     print(border + " "*(math.floor((width-2-len(text))/2)) + text + " "*(math.ceil((width-2-len(text))/2))  + border)
+
 
 title_text()
