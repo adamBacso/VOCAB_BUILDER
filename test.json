@@ -1,0 +1,6 @@
+{
+    "apple": {"nl": "appel", "hu": "alma", "fr": "la pomme"},
+    "bread": {"nl": "brood", "hu": "kenyér", "fr": "le pain"},
+    "boy": {"nl": "jongen", "hu": "fiú", "fr": "le garçon"},
+    "woman": {"nl": "vrouw", "hu": "nő", "fr": "la femme"}
+}
