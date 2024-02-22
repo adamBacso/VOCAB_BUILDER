@@ -2,22 +2,22 @@ from googletrans import Translator, constants
 
 
 class MyTranslator:
-    translate = Translator()
+    gTranslator = Translator()
 
     DEFAULT_LANGUAGE = "fr"
 
-    DEFAULT_LANGUAGES = ["en", "fr", "hun", "nl", "ch"]
+    DEFAULT_LANGUAGES = ["en", "fr", "hu", "nl", "zh-CN"]
 
 
     def __init__(self, defaultOriginLanguage="xx", approvedLanguages=[]):
 
         if defaultOriginLanguage == "xx":
-            self._defaultOriginLanguage = DEFAULT_LANGUAGE
+            self._defaultOriginLanguage = self.DEFAULT_LANGUAGE
         else:
             self._defaultOriginLanguage = defaultOriginLanguage
         
         if approvedLanguages == []:
-            self._activeLanguages = DEFAULT_LANGUAGES
+            self._activeLanguages = self.DEFAULT_LANGUAGES
         else:
             self._activeLanguages = approvedLanguages
     
@@ -49,12 +49,12 @@ class MyTranslator:
     """
     Postcondition: returns an array of strings in the order of _activeLanguages
     """
-    def translate_word(self, word, language=_defaultOriginLanguage):
+    def translate_word(self, word):
         translations = []
+        language = self.gTranslator.detect(word).lang
         for lang in self._activeLanguages:
             if lang != language:
-                translations.append(Translator.translate(word))
+                translations.append(self.gTranslator.translate(word,lang,language).text)
             else:
                 translations.append(word)
-        
         return translations

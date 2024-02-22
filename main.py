@@ -1,6 +1,8 @@
 import math
 import os
 
+from translator import MyTranslator
+
 def title_text():
     os.system('cls')
     title = "VOCAB BUILDER"
@@ -18,3 +20,6 @@ def center(text, width, border = " "):
 
 
 title_text()
+translator = MyTranslator()
+myWord = input("Word: ")
+print(translator.translate_word(myWord))
