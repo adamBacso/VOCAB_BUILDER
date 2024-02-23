@@ -17,8 +17,6 @@ class Deck():
     def add_word_man(self, en, nl, fr, hu, zn_CH):
         ...
 
-        
-
 
 class Word():
     
@@ -43,5 +41,21 @@ class Word():
     
     def get_zn_CH(self):
         return self._hu
+
+    # set specific translations individually
+    def set_en(self,word):
+        self._en = word
+    
+    def set_nl(self,word):
+        self._nl = word
+     
+    def set_fr(self,word):
+        self._fr = word
+    
+    def set_hu(self,word):
+        self._hu = word
+    
+    def set_zn_CH(self,word):
+        self._zn_CH = word
     
 d = Deck()
